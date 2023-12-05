@@ -8,15 +8,31 @@
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
+        <!--
         <header>
-
+            <img src="blah" alt="logo">
         </header>
-        <nav>
+        -->
 
+        <nav>
+            <ul>
+                <li class="bold"><a href="#home">Home</a></li>
+                <li class="bold"><a href="#grid">Grid</a></li>
+                <li class="bold"><a href="#tab_3">Tab 3</a></li>
+                <li class="bold"><a href="#tab_4">Tab 4</a></li>
+                <li class="bold"><a href="#contact">Contact</a></li>
+            </ul>
+
+            <div class="nav_menu_icon">
+                <div class="nav_menu_lines rounded-corners"></div>
+                <div class="nav_menu_lines rounded-corners"></div>
+                <div class="nav_menu_lines rounded-corners"></div>
+            </div>
         </nav>
-        <main>
+
+        <main id="home"> <!--JUST TO GET BACK TO THE TOP-->
             <!--TESTING GALLERY COMPONENT W/GRID LAYOUT + RESPONSIVE DESIGN-->
-            <section class="grid_container">
+            <section class="grid_container" id="grid">
                 <!--THIS IS A SINGLE CARD; I SPLIT THIS INTO TWO DIVS (PRETTY MUCH IF YOU IGNORE SEMANTICS) TO ENSURE EVERY IMAGE AND 
                     HEADER STAY BALANCED WITH THE DESCRIPTION BELOW IT SO THAT IT'S NOT OUT OF PLACE COMPARED TO THE OTHER CARDS-->
                 <article class="card rounded-corners">
@@ -135,8 +151,9 @@
                 </article>
             </section>
         </main>
+        
         <footer>
-            
+            <small>&copy;Blah. All rights reserved.</small>
         </footer>
     </body>
 </html>
