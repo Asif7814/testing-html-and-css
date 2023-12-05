@@ -1,0 +1,103 @@
+body {
+    padding: 0;
+    border: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+    font-size: larger;
+    font-weight: 800;
+    background-color: black;
+}
+
+/*TRANSITIONS; WHEN USER HAS CURSOR OVER/CLICKED ON ELEMENT (IE. HOVER, ACTIVE)*/
+.transition-playground {
+    width: 100%;
+    height: 50vh;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 2rem;
+
+    background-color: rgb(190, 35, 35);
+}
+
+.box {
+    width: 6rem;
+    height: 6rem;
+
+    background-color: white;
+    color: black;
+    border-radius: 1rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box:hover {
+    background-color: black;
+    color: white;
+}
+
+/*TRANSLATE UP + CHANGE COLOR + DROP SHADOW*/
+.box:nth-child(1) {
+    /*can separate values instead of using "all" keyword (ex. transform 0.5s blah, background-color 0.5s, color 0.5s, box-shadow 0.5s)*/
+    /*
+    transition-property: name; which property transforms when action (like hover) is taken by user
+    transition-duration: seconds; how long the property will take to complete the transition
+    transition-timing-function: type; defines the acceleration curve of the property (type in "ease" to see options, linear)
+    transition-delay: seconds; delay before transition takes effect
+    */
+    transition: all 0.5s ease-in-out;
+    box-shadow: 0rem 0.5rem 2rem hsla(0, 0%, 0%, 50%); /*to show depth (ie. add drop shadow)*/
+}
+
+.box:nth-child(1):hover {
+    transform: translateY(-1rem);
+    box-shadow: 0rem 0.5rem 2rem hsla(0, 0%, 100%, 0.5);
+}
+
+/*GROW*/
+.box:nth-child(2) {
+    transition: all 0.5s ease-in-out;
+    border: 0.1rem solid hsl(0, 0%, 0%);
+}
+
+.box:nth-child(2):hover {
+    transform: scale(1.25);
+    border: 0.1rem solid hsl(0, 0%, 100%);
+}
+
+/*SKEW*/
+.box:nth-child(3) {transition: all 0.5s ease-in-out;}
+.box:nth-child(3):hover {transform: skew(-10deg, 20deg);}
+
+/*ROTATE*/
+.box:nth-child(4) {
+    transition: all 0.5s ease-in-out;
+}
+.box:nth-child(4):hover, .box:nth-child(4):hover > * { /*by choosing all children, content can be transformed too*/
+    transform: rotate(45deg);
+}
+
+/*MATRIX; COMPLICATED BUT JUST HAVE TO LEARN TO IMPLEMENT MATRICES*/
+.box:nth-child(5) {
+    transition: all 0.5s ease-in-out;
+}
+.box:nth-child(5):hover {
+    transform: matrix(0, 1, -1, 2, -2, 1); 
+    /*FIRST 3 NUMS CONTROL SCALE OF ELEMENT
+    SECOND 3 NUMS CONTROL STRETCH AMOUNTS*/
+}
+/*3D VERSIONS OF EACH OF THE ABOVE EXIST TOO*/
+
+
+/*ANIMATIONS*/
+.animations-playground {
+    width: 100%;
+    height: 50vh;
+
+    background-color: rgb(35, 40, 190);
+}
