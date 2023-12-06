@@ -93,11 +93,90 @@ body {
 }
 /*3D VERSIONS OF EACH OF THE ABOVE EXIST TOO*/
 
+/*UTILITY CLASSES; THESE ARE SPECIFIC ANIMATION CLASSES TO IMPLEMENT TO THE HTML(
+(USUALLY WOULD HAVE THIS AT THE TOP OF THE CSS FILE)
+    - EX. .animate--fast, .animate--slow, .animate--delay-1s, etc.
+*/
+
+/*ANIMATIONS; DONE NATURALLY AS USER ENTERS WEBPAGE OR SCROLLS WEBPAGE*/
+@keyframes slideInTop {
+    from {
+        transform: translateY(-10rem);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
+.slideInTop {
+    /* animation: slideInTop 0.5s ease-in 1s 1 normal none; */
+    /* 
+        animation-name: name; name of animation
+        animation-duration: seconds; duration that animation takes up
+        animation-timing-function: type; defines the acceleration curve
+        animation-delay: seconds; delay before animation takes effect
+        animation-iteration-count: num of times repeated; amount of times animation will be run
+        animation-direction: normal or reverse; starts from last keyframe and goes to first
+        **animation-fill-mode: type; 
+        */
+}
+
+@keyframes rotateGrow {
+    0%, 
+    100%{
+        transform: rotate(0deg);
+    }
+
+    10% {
+        transform: scale(1);
+        rotate: 90deg;
+    }
+
+    25% {
+        transform: scale(2);
+    }
+
+    50% {
+        transform: rotate(180deg);
+    }
+}
+
+.rotateGrow {
+    animation: rotateGrow 3s ease-in 1s 1 normal none;
+    /* 
+        animation-name: name; name of animation
+        animation-duration: seconds; duration that animation takes up
+        animation-timing-function: type; defines the acceleration curve
+        animation-delay: seconds; delay before animation takes effect
+        animation-iteration-count: num of times repeated; amount of times animation will be run
+        animation-direction: normal or reverse; starts from last keyframe and goes to first
+        **animation-fill-mode: type; 
+        */
+}
 
 /*ANIMATIONS*/
 .animations-playground {
     width: 100%;
     height: 50vh;
 
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-evenly;
+
     background-color: rgb(35, 40, 190);
+}
+
+.box-animations {
+    width: 6rem;
+    height: 6rem;
+    
+    background-color: white;
+    color: black;
+    border-radius: 1rem;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
